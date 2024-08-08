@@ -1,9 +1,15 @@
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import LogoTicker from "@/components/landing/LogoTicker";
 
 
 export default function Home() {
   return (
-    <div className="flex h-screen max-h-screen">
-      home
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <LogoTicker />
+    </>
+ 
   );
 }

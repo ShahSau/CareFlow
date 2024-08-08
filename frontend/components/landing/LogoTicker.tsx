@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 const LogoTicker = () => {
   return (
-    <div className='bg-[#4f6acc] py-8 md:py-12'>
+    <div className='bg-[#bec6e1] py-8 md:py-12'>
         <div className='container'>
             <div className='flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]'>
                 <div className='flex gap-14 flex-none'>

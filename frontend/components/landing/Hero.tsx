@@ -39,7 +39,7 @@ const Hero = () => {
                         width={200}
                         height={200}
                         alt='Noodle Image'
-                        className='hidden lg:block absolute top-[400px] left-[648px] rotate-[30deg]'
+                        className='hidden lg:block absolute top-[400px] left-[550px] rotate-[30deg]'
                     />
                 </div>
             </div>

@@ -3,6 +3,8 @@ package router
 import (
 	"os"
 
+	//"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,6 +19,7 @@ func ClientRoutes() {
 	}
 	r.router.Use(gin.Logger())
 	r.router.Use(gin.Recovery())
+	r.router.Use(cors.Default())
 
 	// swagger TODO
 	// r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))

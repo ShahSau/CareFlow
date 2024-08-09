@@ -10,6 +10,7 @@ import SubmitButton from "../SubmitButton"
 import { useState } from "react"
 import { UserFormValidation } from "./validation"
 import { useRouter } from "next/navigation";
+import { loginUser } from "@/app/api/register/register"
 
 export enum FormFieldType {
   INPUT = "input",
@@ -19,6 +20,14 @@ export enum FormFieldType {
   DATE_PICKER = "datePicker",
   SELECT = "select",
   SKELETON = "skeleton",
+}
+
+export interface user{
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  role: string;
 }
 
  
@@ -40,20 +49,22 @@ const PatientsigninForm =()=> {
     setIsLoading(true);
 
     try {
-      const user = {
+      const user:user = {
         name: values.name,
         email: values.email,
         phone: values.phone,
         password: values.password,
-        role: "patient",
+        role: "Patient",
       };
-
-      console.log(user);
-      // const newUser = await createUser(user);
-
-      // if (newUser) {
-      //   router.push(`/patients/${newUser.$id}/register`);
-      // }
+      
+      const response = await loginUser(user);
+ 
+      if (response.status === 201) {
+        router.push(`/patients/${response.data.user_id}/register`);
+      }else{
+        router.push(`/patients/${response.data.user_id}/dashboard`);
+      }
+      
     } catch (error) {
       console.log(error);
     }

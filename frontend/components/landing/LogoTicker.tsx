@@ -8,7 +8,7 @@ const LogoTicker = () => {
   return (
     <div className='bg-[#bec6e1] py-8 md:py-12'>
         <div className='container'>
-            <div className='flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]'>
+            <div className='flex overflow-hidden'>
                 <motion.div 
                     className='flex gap-14 flex-none pr-14'
                     animate={{

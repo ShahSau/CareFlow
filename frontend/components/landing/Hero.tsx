@@ -2,8 +2,8 @@
 
 import React, { useRef } from 'react'
 import { Button } from '../ui/button'
-import Image from 'next/image'
-import {motion, useScroll, useTransform, useMotionValueEvent} from 'framer-motion'
+import {motion, useScroll, useTransform} from 'framer-motion'
+import Link from 'next/link';
 
 
 const Hero = () => {
@@ -25,10 +25,14 @@ const Hero = () => {
                     <p className='text-xl text-[#f0f0f0] tracking-tight mt-6'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using </p>
                     <div className='flex gap-1 items-center mt-[30px]'>
                         <Button className='shad-primary-btn'>
-                            Book an appointment
+                            <Link href='/patient'>
+                                Book an appointment
+                            </Link>
                         </Button>
                         <Button variant="outline">
-                            Join us as a doctor
+                            <Link href='/doctor'>
+                                Join us as a doctor
+                            </Link>
                         </Button>
                     </div>
                 </div>
@@ -64,7 +68,7 @@ const Hero = () => {
                         alt='Cylinder Image'
                         className='hidden md:block -top-4 -left-4 md:absolute'
                         style={{
-                            translateY: translateY,
+                            translateY
                         }}
                     />
                     <motion.img
@@ -75,7 +79,7 @@ const Hero = () => {
                         className='hidden lg:block absolute top-[400px] left-[550px]'
                         style={{
                             rotate:30,
-                            translateY: translateY,
+                            translateY
                         }}
                     />
                 </div>

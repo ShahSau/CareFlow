@@ -20,6 +20,7 @@ export enum FormFieldType {
   DATE_PICKER = "datePicker",
   SELECT = "select",
   SKELETON = "skeleton",
+  PASSWORD= "password",
 }
 
 export interface user{
@@ -75,7 +76,7 @@ const DoctorsigninForm =()=> {
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
       <section className="mb-12 space-y-4">
         <h1 className="header">Hi there 👋</h1>
-        <p className="text-dark-700">Get started with appointments.</p>
+        <p className="text-dark-700">Join us as a doctor.</p>
       </section>
         <CustomFormField
           fieldType={FormFieldType.INPUT}
@@ -106,7 +107,7 @@ const DoctorsigninForm =()=> {
         />
 
         <CustomFormField
-          fieldType={FormFieldType.INPUT}
+          fieldType={FormFieldType.PASSWORD}
           control={form.control}
           name="password"
           label="password"

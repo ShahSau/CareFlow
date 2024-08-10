@@ -2,12 +2,14 @@ package router
 
 import (
 	"github.com/ShahSau/CareFlow/backend/controllers"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func (r routes) VaccineAppointRoutes(rg *gin.RouterGroup) {
 	// Create a new router group for vaccine appointments
 	vaccineAppointRouteGrouping := rg.Group("/vaccine-appointments")
+	vaccineAppointRouteGrouping.Use(cors.Default())
 
 	// Get all vaccine appointments
 	vaccineAppointRouteGrouping.GET("/", controllers.GetVaccineAppointments)

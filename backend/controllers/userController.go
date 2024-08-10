@@ -2,8 +2,11 @@ package controllers
 
 import (
 	"fmt"
+	"net/http"
 
+	"github.com/ShahSau/CareFlow/backend/models"
 	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 func GetUsers(c *gin.Context) {
@@ -16,7 +19,21 @@ func GetUsers(c *gin.Context) {
 }
 
 func GetUser(c *gin.Context) {
-	fmt.Println("get user", c)
+	userId := c.Param("id")
+
+	var user models.User
+
+	defer c.Request.Body.Close()
+
+	err := userCollection.FindOne(c.Request.Context(), bson.D{{Key: "user_id", Value: userId}}).Decode(&user)
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": user, "status": http.StatusOK, "success": true, "error": false, "message": "User retrieved successfully"})
+
 }
 
 func CreateUser(c *gin.Context) {

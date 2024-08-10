@@ -2,12 +2,14 @@ package router
 
 import (
 	"github.com/ShahSau/CareFlow/backend/controllers"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func (r routes) TestCateRoutes(rg *gin.RouterGroup) {
 	// Create a new router group for test categories
 	testCateRouteGrouping := rg.Group("/testCategories")
+	testCateRouteGrouping.Use(cors.Default())
 
 	// Get all test categories
 	testCateRouteGrouping.GET("/", controllers.GetTestCategories)

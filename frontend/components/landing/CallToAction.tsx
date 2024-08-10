@@ -46,12 +46,12 @@ const CallToAction = () => {
             </div>
             <div className='flex gap-2 mt-10 justify-center'>
                <Button className='shad-primary-btn'>
-                    <Link href='/patient'>
+                    <Link href='/patients'>
                         Book an appointment
                     </Link>
                 </Button>
                 <Button variant="outline">
-                    <Link href='/doctor'>
+                    <Link href='/doctors'>
                         Join us as a doctor
                     </Link>
                 </Button>

@@ -22,6 +22,24 @@ export async function loginUser(request: {
     return NextResponse.error();
 }
 
+export const getUser = async (userId: string) => {
+    const response = await fetch(`http://localhost:8080/v1/users/${userId}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    const user= {
+        name: data.data.name,
+        email: data.data.email,
+        phone: data.data.phone,
+        role: data.data.role,
+        id: data.data.id,
+        password: "",
+    }
+    return user;
+
+}
+
 export async function test(){
     console.log("test")
     const response = await fetch("http://localhost:8080/v1/auth/test",{

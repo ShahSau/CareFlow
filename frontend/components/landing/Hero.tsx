@@ -25,12 +25,12 @@ const Hero = () => {
                     <p className='text-xl text-[#f0f0f0] tracking-tight mt-6'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using </p>
                     <div className='flex gap-1 items-center mt-[30px]'>
                         <Button className='shad-primary-btn'>
-                            <Link href='/patient'>
+                            <Link href='/patients'>
                                 Book an appointment
                             </Link>
                         </Button>
                         <Button variant="outline">
-                            <Link href='/doctor'>
+                            <Link href='/doctors'>
                                 Join us as a doctor
                             </Link>
                         </Button>

@@ -2,12 +2,14 @@ package router
 
 import (
 	"github.com/ShahSau/CareFlow/backend/controllers"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func (r routes) SpeacilizationRoutes(rg *gin.RouterGroup) {
 	// Create a new router group for speacilizations
 	speacilizationRouteGrouping := rg.Group("/speacilizations")
+	speacilizationRouteGrouping.Use(cors.Default())
 
 	// Get all speacilizations
 	speacilizationRouteGrouping.GET("/", controllers.GetSpecializations)

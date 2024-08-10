@@ -20,6 +20,7 @@ export enum FormFieldType {
   DATE_PICKER = "datePicker",
   SELECT = "select",
   SKELETON = "skeleton",
+  PASSWORD= "password",
 }
 
 export interface user{
@@ -107,7 +108,7 @@ const PatientsigninForm =()=> {
         />
 
         <CustomFormField
-          fieldType={FormFieldType.INPUT}
+          fieldType={FormFieldType.PASSWORD}
           control={form.control}
           name="password"
           label="password"

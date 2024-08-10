@@ -2,12 +2,14 @@ package router
 
 import (
 	"github.com/ShahSau/CareFlow/backend/controllers"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func (r routes) DepartmentsRoutes(rg *gin.RouterGroup) {
 	// Create a new router group for departments
 	departmentsRouteGrouping := rg.Group("/departments")
+	departmentsRouteGrouping.Use(cors.Default())
 
 	// Get all departments
 	departmentsRouteGrouping.GET("/", controllers.GetDepartments)
